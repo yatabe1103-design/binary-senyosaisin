@@ -225,13 +225,14 @@ const targetMs = next.getTime();
     try{
       const ohlc = await fetchCandlesTwelveData(symbol, tfMin, 120);
       const out = decideSignal(symbol, tfMin, ohlc);
-
+const last = ohlc[ohlc.length - 1];
+reasonEl.textContent =
+  `${out.reason} / last=${Number(last.close).toFixed(3)} / upd=${new Date().toLocaleTimeString()}`;
       signalEl.textContent = out.dir;
       winrateEl.textContent = out.dir === "HIGH" || out.dir === "LOW"
         ? `${out.winrate}%`
         : "--";
 
-      reasonEl.textContent = out.reason;
 
       if(out.features && (out.dir === "HIGH" || out.dir === "LOW")){
         lastSignal = {
