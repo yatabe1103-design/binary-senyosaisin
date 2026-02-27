@@ -327,4 +327,4 @@ stopBtn.addEventListener("click", stop);
   const k = getApiKey();
   setKeyStatus(k ? "APIキー保存済み" : "未設定（上で保存してください）");
   renderRealWinrate();
-})();
+})();　
