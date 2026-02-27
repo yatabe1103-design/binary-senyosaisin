@@ -1,4 +1,3 @@
-alert("app.js は動いています");
 import { bollinger, ema, rsi, atr } from "./indicators.js";
 import { predict, train } from "./ai.js";
 
@@ -320,7 +319,8 @@ loseBtn.addEventListener("click", ()=>{
   loseBtn.disabled = true;
   lastSignal = null;
 });
-
+startBtn.addEventListener("click", start);
+stopBtn.addEventListener("click", stop);
 (()=>{
   const k = getApiKey();
   setKeyStatus(k ? "APIキー保存済み" : "未設定（上で保存してください）");
