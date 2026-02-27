@@ -35,7 +35,7 @@ const RESULTS_KEY = "results_last50_v1";
 
 let timer = null;
 let lastSignal = null;
-
+let lastEvalTargetMs = null; // 同じ判定時刻で2回実行しないため
 function setKeyStatus(msg){ keyStatus.textContent = msg; }
 function getApiKey(){ return localStorage.getItem(LS_KEY) || ""; }
 
@@ -219,8 +219,9 @@ async function tick(){
   const diffMs = next.getTime() - nowJST().getTime();
   const diffSec = Math.max(0, Math.ceil(diffMs/1000));
   countdownEl.textContent = `${diffSec}秒（次の判定 ${fmtTime(next)}）`;
-
-  if(diffSec === leadSec){
+const targetMs = next.getTime();
+  if (diffSec <= leadSec && lastEvalTargetMs !== targetMs) {
+  lastEvalTargetMs = targetMs;
     try{
       const ohlc = await fetchCandlesTwelveData(symbol, tfMin, 120);
       const out = decideSignal(symbol, tfMin, ohlc);
