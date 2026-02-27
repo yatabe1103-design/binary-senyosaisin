@@ -1,0 +1,149 @@
+:root {
+  font-family: system-ui, -apple-system, "Noto Sans JP", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0b1220;
+  color: #e9eefc;
+}
+
+.header {
+  padding: 16px;
+  background: #0f1a33;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.header h1 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.sub {
+  opacity: .8;
+  font-size: 12px;
+}
+
+.wrap {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #101a36;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  opacity: .95;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0b1430;
+  color: #e9eefc;
+}
+
+button {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #2b64ff;
+  color: white;
+  font-weight: 700;
+}
+
+button.ghost {
+  background: transparent;
+}
+
+button.good {
+  background: #1aa36b;
+}
+
+button.bad {
+  background: #d94b5a;
+}
+
+button:disabled {
+  opacity: .5;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.note {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: .85;
+}
+
+.warn {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: .9;
+  background: rgba(255,255,255,.06);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.06);
+  font-size: 12px;
+}
+
+.item b {
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
