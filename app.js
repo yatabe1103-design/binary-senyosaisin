@@ -43,7 +43,7 @@ async function fetchCandles(symbol, tfMin, count=120){
   if(!key) throw new Error("APIキー未設定");
 
   const url = new URL("https://api.twelvedata.com/time_series");
-  url.searchParams.set("symbol", symbol);
+  url.searchParams.set("symbol", symbol.replace("/", ""));
   url.searchParams.set("interval", `${tfMin}min`);
   url.searchParams.set("outputsize", count);
   url.searchParams.set("format", "JSON");
