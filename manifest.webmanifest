@@ -1,0 +1,9 @@
+{
+  "name": "ザオプション用シグナル（外部価格API）",
+  "short_name": "Signal",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0f1a33",
+  "icons": []
+}
