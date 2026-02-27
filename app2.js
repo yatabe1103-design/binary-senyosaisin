@@ -224,6 +224,9 @@ const targetMs = next.getTime();
   lastEvalTargetMs = targetMs;
     try{
       const ohlc = await fetchCandlesTwelveData(symbol, tfMin, 120);
+      if (!ohlc || !ohlc.length) {
+  throw new Error("価格データ取得失敗");
+}
       const out = decideSignal(symbol, tfMin, ohlc);
 const last = ohlc[ohlc.length - 1];
 reasonEl.textContent =
