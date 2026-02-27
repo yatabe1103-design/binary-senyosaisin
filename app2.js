@@ -328,3 +328,4 @@ stopBtn.addEventListener("click", stop);
   setKeyStatus(k ? "APIキー保存済み" : "未設定（上で保存してください）");
   renderRealWinrate();
 })();　
+　
