@@ -1,4 +1,4 @@
-alert("app.js が動いています");
+alert("app.js は動いています");
 import { bollinger, ema, rsi, atr } from "./indicators.js";
 import { predict, train } from "./ai.js";
 
